@@ -1,0 +1,10 @@
+local_address = "1-ff00:0:110,{{.AS_A_TS_IP_0}}:10123"
+scion_daemon_address = "127.0.0.1:30255"
+
+ntp_reference_clocks = ["0-0,{{.REFC_IP_0}}:123"]
+
+ntske_cert_file = "gen/tls.crt"
+ntske_key_file = "gen/tls.key"
+ntske_server_name = "localhost"
+
+dscp = 0

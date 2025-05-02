@@ -1,0 +1,14 @@
+[Unit]
+Description=SCION Dispatcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStartPre=rm -rf /run/shm/dispatcher
+WorkingDirectory=/home/ec2-user/testnet/scion
+ExecStart=/home/ec2-user/dist/bin/arm64/dispatcher --config gen/%i/dispatcher.toml
+LimitNOFILE=4096
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

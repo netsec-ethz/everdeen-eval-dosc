@@ -1,0 +1,12 @@
+[Unit]
+Description=SCION Control Service
+After=network-online.target scion-dispatcher.service
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/home/ec2-user/testnet/scion
+ExecStart=/home/ec2-user/dist/bin/arm64/control --config gen/%i/cs1.toml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

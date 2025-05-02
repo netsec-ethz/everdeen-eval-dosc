@@ -1,0 +1,11 @@
+[Unit]
+Description=iperf3
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/iperf3 --server
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

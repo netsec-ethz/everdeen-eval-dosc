@@ -1,0 +1,13 @@
+[Unit]
+Description=SCION Timeservice Client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/home/ec2-user/testnet/scion
+ExecStartPre=timedatectl set-ntp false
+ExecStart=/home/ec2-user/dist/bin/arm64/timeservice client -verbose -config %i_TS.toml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

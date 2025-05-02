@@ -1,0 +1,9 @@
+---
+ASes:
+  "1-ff00:0:110": {core: true, voting: true, authoritative: true, issuing: true}
+  "1-ff00:0:120": {core: true, voting: true, authoritative: true, issuing: true}
+  "1-ff00:0:130": {cert_issuer: 1-ff00:0:110}
+links:
+  - {a: "1-ff00:0:110-A#1", b: "1-ff00:0:120-B#2", linkAtoB: CORE}
+  - {a: "1-ff00:0:110-A#3", b: "1-ff00:0:130-C#5", linkAtoB: CHILD}
+  - {a: "1-ff00:0:120-B#4", b: "1-ff00:0:130-C#6", linkAtoB: CHILD}

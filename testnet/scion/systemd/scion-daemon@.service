@@ -1,0 +1,12 @@
+[Unit]
+Description=SCION Daemon
+After=network-online.target scion-dispatcher.service
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/home/ec2-user/testnet/scion
+ExecStart=/home/ec2-user/dist/bin/arm64/daemon --config gen/%i/sd1.toml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
